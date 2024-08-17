@@ -46,11 +46,10 @@ async function run() {
   console.log(filterByBand);
   
   const sort = req.query.sort
-  const search = req.query.search
   // filter by price range
   const {minPrice, maxPrice}=req.query
-  // console.log(size, page)
-
+  // search products based on the product name.
+  const search = req.query.search
   let query = {
     productName: { $regex: search, $options: 'i' },
   }
