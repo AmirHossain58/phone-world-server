@@ -41,6 +41,7 @@ async function run() {
   const page = parseInt(req.query.page) - 1
   // filter by category
   const filter = req.query.filter
+  // filter by brand name
   const filterByBand = req.query.filterByBand
   console.log(filterByBand);
   
@@ -55,7 +56,8 @@ async function run() {
   if (minPrice !== undefined && maxPrice !== undefined) {
     query.price = { $gte: parseFloat(minPrice), $lte: parseFloat(maxPrice) }; 
   }
-  if (filter) query.category=filter 
+  if (filter) query.category=filter
+  // filter by brand name 
   if (filterByBand) query.brand=filterByBand 
   let options = {}
   if (sort) {
