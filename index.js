@@ -31,6 +31,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
+    // create mongodb collection
     const phonesCollection = client.db('PhoneWorldDB').collection('phones')
 
  // Get all phones data from db for pagination
