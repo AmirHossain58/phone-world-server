@@ -47,12 +47,15 @@ async function run() {
   
   const sort = req.query.sort
   const search = req.query.search
+  // filter by price range
   const {minPrice, maxPrice}=req.query
   // console.log(size, page)
 
   let query = {
     productName: { $regex: search, $options: 'i' },
   }
+
+    // filter by price range
   if (minPrice !== undefined && maxPrice !== undefined) {
     query.price = { $gte: parseFloat(minPrice), $lte: parseFloat(maxPrice) }; 
   }
