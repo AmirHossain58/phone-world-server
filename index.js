@@ -44,7 +44,7 @@ async function run() {
   // filter by brand name
   const filterByBand = req.query.filterByBand
   console.log(filterByBand);
-  
+  //sort by  Price: Low to High, High to Low
   const sort = req.query.sort
   // filter by price range
   const {minPrice, maxPrice}=req.query
@@ -62,6 +62,7 @@ async function run() {
   // filter by brand name 
   if (filterByBand) query.brand=filterByBand 
   let options = {}
+    //sort by  Price: Low to High, High to Low
   if (sort) {
     if(sort==='Newest first'){
       options = { sort: { createdAt: -1 } }
