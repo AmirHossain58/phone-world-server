@@ -39,6 +39,7 @@ async function run() {
   // Pagination
   const size = parseInt(req.query.size)
   const page = parseInt(req.query.page) - 1
+  // filter by category
   const filter = req.query.filter
   const filterByBand = req.query.filterByBand
   console.log(filterByBand);
