@@ -34,7 +34,7 @@ async function run() {
     // create mongodb collection
     const phonesCollection = client.db('PhoneWorldDB').collection('phones')
 
- // Get all phones data from db for pagination
+ // Get all phones data from db
  app.get('/all-phones', async (req, res) => {
   const size = parseInt(req.query.size)
   const page = parseInt(req.query.page) - 1
