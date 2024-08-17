@@ -36,6 +36,7 @@ async function run() {
 
  // Get all phones data from db
  app.get('/all-phones', async (req, res) => {
+  // Pagination
   const size = parseInt(req.query.size)
   const page = parseInt(req.query.page) - 1
   const filter = req.query.filter
